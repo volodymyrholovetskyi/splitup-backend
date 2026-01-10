@@ -1,7 +1,7 @@
-package ua.vholovetskyi.splitup.expense.db;
+package ua.vholovetskyi.splitup.expense.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ua.vholovetskyi.splitup.expense.domain.ExpenseShare;
+import ua.vholovetskyi.splitup.expense.model.ExpenseShare;
 
 public interface ExpenseShareRepository extends JpaRepository<ExpenseShare, Long> {
 }

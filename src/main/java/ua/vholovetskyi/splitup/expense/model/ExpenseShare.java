@@ -1,4 +1,4 @@
-package ua.vholovetskyi.splitup.expense.domain;
+package ua.vholovetskyi.splitup.expense.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,23 +10,19 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "expenses")
+@Table(name = "expense_shares")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class Expense {
+public class ExpenseShare {
 
     @Id
     @GeneratedValue
     private Long id;
-    private Long groupId;
-    private Long paidByUserId;
-    private BigDecimal amount;
-    private String currency;
-    private String description;
-    private LocalDateTime createdAt;
+    private Long expenseId;
+    private Long userId;
+    private BigDecimal shareAmount;
 }
