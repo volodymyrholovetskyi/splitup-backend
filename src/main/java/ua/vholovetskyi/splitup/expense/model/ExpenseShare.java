@@ -1,0 +1,26 @@
+package ua.vholovetskyi.splitup.expense.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.*;
+
+import java.math.BigDecimal;
+
+@Entity
+@Table(name = "expense_shares")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Builder
+public class ExpenseShare {
+
+    @Id
+    @GeneratedValue
+    private Long id;
+    private Long expenseId;
+    private Long userId;
+    private BigDecimal shareAmount;
+}
