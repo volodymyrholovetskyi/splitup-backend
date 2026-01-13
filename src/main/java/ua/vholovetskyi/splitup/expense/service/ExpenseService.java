@@ -20,7 +20,7 @@ public class ExpenseService {
     private final ExpenseRepository expenseRepository;
     private final ExpenseShareRepository expenseShareRepository;
 
-    public void createExpense(CreateExpenseRequest expenseReq) {
+    public Long createExpense(CreateExpenseRequest expenseReq) {
 
         var expense = ExpenseFactory.createNewExpense(expenseReq);
         var savedExpenses = expenseRepository.save(expense);
@@ -35,6 +35,7 @@ public class ExpenseService {
 
             expenseShareRepository.save(expenseShare);
         }
+        return savedExpenses.getId();
     }
 
     private BigDecimal calculateShare(CreateExpenseRequest expenseReq) {
