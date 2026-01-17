@@ -28,7 +28,7 @@ public class ExpenseService {
         BigDecimal share = calculateShare(expenseReq);
 
         for (Long userId : expenseReq.getParticipantUserIds()) {
-            var expenseShare = ExpenseShareFactory.createShare(
+            var expenseShare = ExpenseShareFactory.createExpenseShare(
                     savedExpenses.getId(),
                     userId,
                     share);
