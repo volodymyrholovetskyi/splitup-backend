@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 public class ExpenseShareFactory {
 
-    public static ExpenseShare createShare(Long expenseId, Long userId, BigDecimal amount) {
+    public static ExpenseShare createExpenseShare(Long expenseId, Long userId, BigDecimal amount) {
 
         return ExpenseShare.builder()
                 .expenseId(expenseId)
